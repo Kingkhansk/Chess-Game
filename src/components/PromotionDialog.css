@@ -1,0 +1,130 @@
+.promotion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.promotion-dialog {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  animation: slideUp 0.3s ease-out;
+}
+
+.promotion-dialog h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  color: #1e293b;
+  text-align: center;
+  font-weight: 700;
+}
+
+.promotion-pieces {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.promotion-piece {
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  background: #f8fafc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.promotion-piece:hover {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.promotion-piece:active {
+  transform: translateY(0);
+}
+
+.piece-symbol {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.piece-name {
+  font-size: 0.9rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive */
+
+@media (max-width: 480px) {
+  .promotion-dialog {
+    padding: 1.5rem;
+  }
+
+  .promotion-dialog h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .promotion-pieces {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .promotion-piece {
+    padding: 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .piece-symbol {
+    font-size: 2rem;
+  }
+
+  .piece-name {
+    font-size: 0.8rem;
+  }
+}
